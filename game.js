@@ -6,14 +6,16 @@ let level = 0;
 let h2 = document.querySelector("h2");
 let btns = ["red","green","blue","yellow"];
 
-document.addEventListener("keypress", function () {
+function startGame() {
     if (started == false) {
         console.log("Game is started");
         started = true;
+        levelUp();
     }
+}
 
-    levelUp();
-});
+document.addEventListener("keydown", startGame);
+h2.addEventListener("click", startGame);
 
 function gameFlash(btn){
     btn.classList.add("flash");
@@ -50,7 +52,7 @@ function checkAns(idx){
             setTimeout(levelUp,1000);
         }
     }else{
-        h2.innerHTML = `Game Over! Your score was <b>${level}<b> <br> press any key to start.`;
+        h2.innerHTML = `Game Over! Your score was <b>${level}<b> <br> press any key or tap here to start.`;
         document.querySelector("body").style.backgroundColor = "red";
         setTimeout(function(){
             document.querySelector("body").style.backgroundColor = "white";
@@ -60,7 +62,6 @@ function checkAns(idx){
 }
 
 function btnPress(){
-    // console.log(this);
     let btn = this;
     userFlash(btn);
 

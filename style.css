@@ -9,6 +9,12 @@ body{
     border-radius: 20%;
     margin: 2rem;
 }
+h2 {
+    user-select: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
 
 .btn-container{
     display: flex;

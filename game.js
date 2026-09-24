@@ -15,7 +15,7 @@ function startGame() {
 }
 
 document.addEventListener("keydown", startGame);
-h2.addEventListener("click", startGame);
+h2.addEventListener("pointerdown", startGame);
 
 function gameFlash(btn){
     btn.classList.add("flash");
